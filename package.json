@@ -1,0 +1,16 @@
+{
+  "name": "xeokit-sdk-plugins",
+  "private": true,
+  "description": "Separately installable plugins for @xeokit/xeokit-sdk",
+  "license": "AGPL-3.0",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces"
+  },
+  "devDependencies": {
+    "@xeokit/xeokit-sdk": "^2.6.114",
+    "typescript": "^7.0.2"
+  }
+}

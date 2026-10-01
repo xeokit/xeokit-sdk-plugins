@@ -1,0 +1,30 @@
+{
+  "name": "@xeokit-sdk-plugins/walk-mode",
+  "version": "0.1.0",
+  "description": "xeokit-sdk plugin for first-person walking through a model",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepack": "npm run build"
+  },
+  "peerDependencies": {
+    "@xeokit/xeokit-sdk": "^2.6.0"
+  },
+  "keywords": [
+    "xeokit",
+    "xeokit-plugin",
+    "bim",
+    "webgl"
+  ],
+  "license": "AGPL-3.0"
+}

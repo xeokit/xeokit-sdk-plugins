@@ -21,7 +21,8 @@
     "build": "npm run build --workspaces && tsc",
     "prepack": "npm run build",
     "new": "node scripts/new-plugin.js",
-    "docs": "npx -y -p typescript@6.0.3 -p typedoc@0.28.20 typedoc"
+    "docs": "npx -y -p typescript@6.0.3 -p typedoc@0.28.20 typedoc",
+    "docs:serve": "npm run docs -- --watch & npx -y serve@14.2.6 docs"
   },
   "dependencies": {
     "@xeokit/sdk-plugins-walk-mode": "*"

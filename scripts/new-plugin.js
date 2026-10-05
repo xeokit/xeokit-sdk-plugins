@@ -38,6 +38,11 @@ export interface ${className}Config {
     id?: string;
 }
 
+/**
+ * {@link Viewer} plugin.
+ *
+ * @document ../README.md
+ */
 export class ${className} extends Plugin {
     constructor(viewer: Viewer, cfg: ${className}Config = {}) {
         super("${id}", viewer, cfg);

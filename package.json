@@ -1,16 +1,48 @@
 {
-  "name": "xeokit-sdk-plugins",
-  "private": true,
-  "description": "Separately installable plugins for @xeokit/xeokit-sdk",
-  "license": "AGPL-3.0",
+  "name": "@xeokit/sdk-plugins",
+  "version": "0.1.0",
+  "description": "Plugins for @xeokit/xeokit-sdk",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/registry.d.ts",
+      "default": "./dist/registry.js"
+    }
+  },
+  "types": "./dist/registry.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "sideEffects": false,
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "build": "npm run build --workspaces"
+    "build": "npm run build --workspaces && tsc",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "@xeokit/sdk-plugins-walk-mode": "*"
+  },
+  "bundleDependencies": [
+    "@xeokit/sdk-plugins-walk-mode"
+  ],
+  "peerDependencies": {
+    "@xeokit/xeokit-sdk": "^2.6.0"
   },
   "devDependencies": {
     "@xeokit/xeokit-sdk": "^2.6.114",
     "typescript": "^7.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xeokit/xeokit-sdk-plugins.git"
+  },
+  "keywords": [
+    "xeokit",
+    "xeokit-plugin",
+    "bim",
+    "webgl"
+  ],
+  "license": "AGPL-3.0"
 }

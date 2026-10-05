@@ -1,15 +1,15 @@
-# @xeokit-sdk-plugins/walk-mode
+# WalkModePlugin
 
 [xeokit-sdk](https://github.com/xeokit/xeokit-sdk) plugin for first-person walking through a model: gravity, collisions,
 climbing steps, going through doors and free flight.
 
 ```bash
-npm install @xeokit/xeokit-sdk @xeokit-sdk-plugins/walk-mode
+npm install @xeokit/xeokit-sdk @xeokit/sdk-plugins
 ```
 
 ```javascript
 import {Viewer} from "@xeokit/xeokit-sdk";
-import {WalkModePlugin} from "@xeokit-sdk-plugins/walk-mode";
+import {WalkModePlugin} from "@xeokit/sdk-plugins";
 
 const viewer = new Viewer({canvasId: "myCanvas"});
 viewer.camera.worldAxis = [1, 0, 0, 0, 0, 1, 0, -1, 0]; // Z-up World is required

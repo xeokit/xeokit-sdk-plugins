@@ -52,9 +52,15 @@ Naming convention:
 
 ## Publishing
 
-`prepack` builds every plugin and bundles them into the package:
+Pushing a `v*` tag publishes the package from [`.github/workflows/publish.yml`](.github/workflows/publish.yml)
+(the tag must match the `package.json` version):
 
 ```bash
-npm version patch
-npm publish --access public
+npm version patch          # bumps the version, commits and tags v0.1.1
+git push --follow-tags
 ```
+
+The workflow authenticates with [npm trusted publishing](https://docs.npmjs.com/trusted-publishers) (OIDC, with
+provenance). Trusted publishing can only be configured for an existing package, so the first version is published
+with the `NPM_TOKEN` repository secret; then add `xeokit/xeokit-sdk-plugins` / `publish.yml` as a trusted publisher
+on npmjs.com and remove the secret.

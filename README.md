@@ -58,7 +58,7 @@ Naming convention:
 ## Publishing
 
 Pushing a `v*` tag publishes the package from [`.github/workflows/publish.yml`](.github/workflows/publish.yml)
-(the tag must match the `package.json` version):
+(the tag must be on `main` and match the `package.json` version):
 
 ```bash
 npm version patch          # bumps the version, commits and tags v0.1.1

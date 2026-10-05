@@ -47,5 +47,12 @@
     "bim",
     "webgl"
   ],
-  "license": "AGPL-3.0"
+  "license": "AGPL-3.0",
+  "devEngines": {
+    "packageManager": {
+      "name": "npm",
+      "version": "12.2.0",
+      "onFail": "download"
+    }
+  }
 }

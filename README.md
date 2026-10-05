@@ -38,12 +38,11 @@ Naming convention:
 | folder | `packages/<name>` (kebab-case, no `-plugin` suffix) | `packages/walk-mode` |
 | entry point | `src/index.ts` | `packages/walk-mode/src/index.ts` |
 
-1. Copy `package.json`, `tsconfig.json` and `README.md` of `packages/walk-mode` to `packages/<name>` and rename the
-   package; export the plugin from `src/index.ts`.
-2. Register it in the root package: add it to `dependencies` (`"*"`) **and** `bundleDependencies` in
-   `package.json`, run `npm install`, add `export * from "@xeokit/sdk-plugins-<name>";` to `registry.ts` and
-   add it to the table above. Exported names must be unique across plugins (`tsc` fails on a clash), so prefix
-   them with the plugin name.
+1. Run `npm run new -- <name>`. It creates `packages/<name>` with an empty `<Name>Plugin` (package and tsconfig
+   copied from `walk-mode`), adds the package to `dependencies` and `bundleDependencies`, re-exports it from
+   `registry.ts` and runs `npm install`.
+2. Add the plugin to the table above. Exported names must be unique across plugins (`tsc` fails on a clash), so
+   prefix them with the plugin name.
 3. Keep `@xeokit/xeokit-sdk` as a **peer** dependency, never a regular one, so the plugin uses the same SDK
    instance as the application (plugins must extend the app's `Plugin` class). Keep modules free of top-level
    side effects (`"sideEffects": false`).

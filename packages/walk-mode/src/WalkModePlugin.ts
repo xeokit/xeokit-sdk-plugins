@@ -52,7 +52,7 @@ export interface WalkModePluginConfig extends Partial<WalkModeSettings> {
  *
  * ````javascript
  * import {Viewer} from "@xeokit/xeokit-sdk";
- * import {WalkModePlugin} from "@xeokit-sdk-plugins/walk-mode";
+ * import {WalkModePlugin} from "@xeokit/sdk-plugins";
  *
  * const viewer = new Viewer({canvasId: "myCanvas"});
  * const walkMode = new WalkModePlugin(viewer, {

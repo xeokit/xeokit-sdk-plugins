@@ -19,7 +19,8 @@
   ],
   "scripts": {
     "build": "npm run build --workspaces && tsc",
-    "prepack": "npm run build"
+    "prepack": "npm run build",
+    "new": "node scripts/new-plugin.js"
   },
   "dependencies": {
     "@xeokit/sdk-plugins-walk-mode": "*"

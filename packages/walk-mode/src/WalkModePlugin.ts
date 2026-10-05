@@ -67,6 +67,8 @@ export interface WalkModePluginConfig extends Partial<WalkModeSettings> {
  *
  * button.onclick = () => walkMode.activate(); // Pointer lock needs a user gesture
  * ````
+ *
+ * @document ../README.md
  */
 export class WalkModePlugin extends Plugin {
 

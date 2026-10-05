@@ -20,7 +20,8 @@
   "scripts": {
     "build": "npm run build --workspaces && tsc",
     "prepack": "npm run build",
-    "new": "node scripts/new-plugin.js"
+    "new": "node scripts/new-plugin.js",
+    "docs": "npx -y -p typescript@6.0.3 -p typedoc@0.28.20 typedoc"
   },
   "dependencies": {
     "@xeokit/sdk-plugins-walk-mode": "*"

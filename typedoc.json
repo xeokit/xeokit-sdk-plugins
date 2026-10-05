@@ -1,0 +1,14 @@
+{
+  "entryPoints": ["registry.ts"],
+  "out": "docs",
+  "includeVersion": true,
+  "compilerOptions": {
+    "paths": {"@xeokit/sdk-plugins-*": ["./packages/*/src/index.ts"]}
+  },
+  "externalSymbolLinkMappings": {
+    "@xeokit/xeokit-sdk": {
+      "Plugin": "https://xeokit.github.io/xeokit-sdk/docs/class/src/viewer/Plugin.js~Plugin.html",
+      "*": "https://xeokit.github.io/xeokit-sdk/docs/"
+    }
+  }
+}

@@ -1,0 +1,217 @@
+/*
+ * Look of the ESDoc template of the xeokit-sdk API docs (xeokit.github.io/xeokit-sdk/docs), which these docs sit
+ * next to on xeokit.io. TypeDoc's own styles are in "@layer typedoc", so these unlayered rules win without extra
+ * specificity, and setting the final --color-* variables here pins the light theme whatever the OS or theme setting.
+ */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap");
+
+:root {
+    --color-scheme: light;
+    --color-background: #fff;
+    --color-background-secondary: #fafafa;
+    --color-background-active: #eee;
+    --color-background-warning: #fef2c0;
+    --color-warning-text: #555;
+    --color-accent: #ddd;
+    --color-active-menu-item: #eee;
+    --color-text: #555;
+    --color-contrast-text: #000;
+    --color-text-aside: #aaa;
+    --color-icon-background: #fff;
+    --color-icon-text: #555;
+    --color-comment-tag: #f5f5f5;
+    --color-comment-tag-text: #555;
+    --color-link: #039be5;
+    --color-focus-outline: #039be5;
+    --color-document: #555;
+    --color-ts-keyword: #aaa;
+    --color-alert-note: var(--light-color-alert-note);
+    --color-alert-tip: var(--light-color-alert-tip);
+    --color-alert-important: var(--light-color-alert-important);
+    --color-alert-warning: var(--light-color-alert-warning);
+    --color-alert-caution: var(--light-color-alert-caution);
+    --external-icon: var(--light-external-icon);
+    --code-background: #f5f5f5;
+}
+
+body {
+    font-family: "Source Sans 3", "Source Sans Pro", Roboto, sans-serif;
+    line-height: 1.5;
+    color: var(--color-text);
+}
+
+code, pre, .tsd-signature, .tsd-signature * {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+pre {
+    border: none;
+    border-radius: 3px;
+}
+
+:not(pre) > code {
+    padding: 0.2em 0.5em;
+    font-size: 85%;
+    background: rgba(0, 0, 0, 0.04);
+    border-radius: 3px;
+}
+
+h1, h2, h3, h4 {
+    color: var(--color-text);
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 34px;
+    border-bottom: 1px solid var(--color-accent);
+}
+
+.col-content h2 {
+    font-size: 20px;
+    border-bottom: 1px solid var(--color-accent);
+}
+
+/* Section headings sit inline next to the accordion chevron, so the summary carries the full-width border. */
+.tsd-accordion-summary:has(> h2) {
+    border-bottom: 1px solid var(--color-accent);
+}
+
+.col-content .tsd-accordion-summary > h2 {
+    border-bottom: none;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+/* TypeDoc pulls panel headings into the gutter, which would stretch the borders past the text. */
+.tsd-panel > h1, .tsd-panel > h2, .tsd-panel > h3 {
+    margin-inline: 0;
+    padding-inline: 0;
+}
+
+.tsd-member > .tsd-anchor-link {
+    padding: 4px;
+    color: #000;
+    background: #f0f0f0;
+}
+
+/* Type names link like the rest; TypeDoc colors them by kind. */
+a[class*="tsd-kind-"], a.tsd-signature-type {
+    color: var(--color-link);
+}
+
+.tsd-signature-type {
+    font-style: normal;
+}
+
+span[class*="tsd-kind-"] {
+    color: var(--color-text);
+}
+
+.tsd-page-toolbar a {
+    color: #444;
+}
+
+.tsd-page-toolbar .title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 400;
+}
+
+.tsd-page-toolbar .title::before {
+    content: "";
+    width: 34px;
+    height: 34px;
+    background: url("favicon.png") center / cover;
+}
+
+.container {
+    max-width: none;
+}
+
+.tsd-navigation a, .tsd-page-navigation a {
+    color: #666;
+}
+
+.tsd-typography table {
+    font-size: 14px;
+    border-collapse: collapse;
+}
+
+.tsd-typography th {
+    color: #fff;
+    font-weight: normal;
+    background: #999;
+}
+
+.tsd-typography th, .tsd-typography td {
+    padding: 4px;
+    border: 1px solid var(--color-accent);
+}
+
+.tsd-typography tr:nth-child(2n) {
+    background: none;
+}
+
+/*
+ * ESDoc kind badges: colored letter on a tinted square. The icons are <use> clones (some of the external icons.svg),
+ * which only inherited properties and variables reach. Kind-colored text is overridden above, so the --color-ts-*
+ * variables only draw the icon outline and get the fill color to hide it.
+ */
+.tsd-kind-icon {
+    font-weight: bold;
+}
+
+:root {
+    --color-ts-class: #bfe5bf;
+    --color-ts-constructor: #bfe5bf;
+    --color-ts-interface: #fef2c0;
+    --color-ts-function: #d6bdde;
+    --color-ts-method: #d6bdde;
+    --color-ts-variable: #fad8c7;
+    --color-ts-property: #fad8c7;
+    --color-ts-accessor: #fad8c7;
+    --color-ts-type-alias: #edbec3;
+    --color-ts-module: #bbcbea;
+    --color-ts-namespace: #bbcbea;
+    --color-ts-enum: #bbcbea;
+    --color-ts-reference: #bbcbea;
+}
+
+use[href$="#icon-128"], use[href$="#icon-512"] {
+    --color-icon-text: #009800;
+    --color-icon-background: #bfe5bf;
+}
+
+use[href$="#icon-256"] {
+    --color-icon-text: #fbca04;
+    --color-icon-background: #fef2c0;
+}
+
+use[href$="#icon-64"], use[href$="#icon-2048"] {
+    --color-icon-text: #6b0090;
+    --color-icon-background: #d6bdde;
+}
+
+use[href$="#icon-16"], use[href$="#icon-32"], use[href$="#icon-1024"], use[href$="#icon-262144"] {
+    --color-icon-text: #eb6420;
+    --color-icon-background: #fad8c7;
+}
+
+use[href$="#icon-2097152"] {
+    --color-icon-text: #db001e;
+    --color-icon-background: #edbec3;
+}
+
+use[href$="#icon-2"], use[href$="#icon-4"], use[href$="#icon-8"], use[href$="#icon-4194304"] {
+    --color-icon-text: #0738c3;
+    --color-icon-background: #bbcbea;
+}
+
+footer {
+    font-style: italic;
+    font-size: 13px;
+    text-align: right;
+}

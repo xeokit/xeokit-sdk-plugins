@@ -2,6 +2,11 @@
   "entryPoints": ["index.ts"],
   "out": "docs",
   "includeVersion": true,
+  "customCss": "typedoc/custom.css",
+  "favicon": "typedoc/favicon.png",
+  "lightHighlightTheme": "one-light",
+  "darkHighlightTheme": "one-light",
+  "navigationLinks": {"GitHub": "https://github.com/xeokit/xeokit-sdk-plugins"},
   "compilerOptions": {
     "paths": {"@xeokit/sdk-plugins-*": ["./packages/*/src/index.ts"]}
   },

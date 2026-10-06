@@ -110,4 +110,4 @@ Events (subscribe with `plugin.on(event, callback)`, typed in `WalkModeEvents`):
 | `flying` | `boolean` — free flight toggled |
 | `pressedActions` | actions whose keys are held, e.g. `["forward", "run"]` — for highlighting a key legend |
 
-Example: [`examples/walk-mode`](../../../examples/walk-mode).
+Example: [WalkModePlugin_Schependomlaan](https://xeokit.io/sdk-v2/examples/navigation/#WalkModePlugin_Schependomlaan).

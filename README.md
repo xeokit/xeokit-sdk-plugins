@@ -57,7 +57,7 @@ Naming convention:
    instance as the application (plugins must extend the app's `Plugin` class). Keep modules free of top-level
    side effects (`"sideEffects": false`).
 4. Import everything from `"@xeokit/xeokit-sdk"`, extend `Plugin`, unsubscribe from viewer events in `destroy()`.
-5. Add a usage example to [`../examples`](../examples).
+5. Add a usage example to [xeokit/examples](https://github.com/xeokit/examples).
 
 ## Publishing
 

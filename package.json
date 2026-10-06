@@ -48,6 +48,9 @@
     "webgl"
   ],
   "license": "AGPL-3.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "devEngines": {
     "packageManager": {
       "name": "npm",

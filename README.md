@@ -21,8 +21,8 @@ The package has no side effects, so bundlers drop the plugins an application doe
 
 ```bash
 npm install
-npm run build      # builds every package in packages/, then registry.ts -> dist/
-npm run docs       # API docs of everything registry.ts exports -> docs/
+npm run build      # builds every package in packages/, then bundles index.ts -> dist/index.js
+npm run docs       # API docs of everything index.ts exports -> docs/
 npm run docs:serve # rebuilds the docs on change and serves them at http://localhost:3000
 ```
 
@@ -32,9 +32,11 @@ TypeDoc doesn't support TypeScript 7 yet, so `npm run docs` runs it through `npx
 
 ## Adding a plugin
 
-Each plugin is a private workspace package in `packages/`. It is never published on its own: the root package
-lists it in `bundleDependencies`, so `npm pack` puts the built plugin inside the `@xeokit/sdk-plugins` tarball and
-[`registry.ts`](registry.ts) re-exports it by package name.
+Each plugin is a private workspace package in `packages/`. It is never published on its own:
+[`index.ts`](index.ts) re-exports it by package name and the build bundles all plugins into a single
+`dist/index.js` with [esbuild](https://esbuild.github.io), leaving `@xeokit/xeokit-sdk` external. The type
+declarations still re-export the plugins by package name, so the root package also lists them in
+`bundleDependencies`, which puts them inside the `@xeokit/sdk-plugins` tarball.
 
 Naming convention:
 
@@ -46,7 +48,7 @@ Naming convention:
 
 1. Run `npm run new -- <name>`. It creates `packages/<name>` with an empty `<Name>Plugin` (package and tsconfig
    copied from `walk-mode`), adds the package to `dependencies` and `bundleDependencies`, re-exports it from
-   `registry.ts` and runs `npm install`.
+   `index.ts` and runs `npm install`.
 2. Add the plugin to the table above. Exported names must be unique across plugins (`tsc` fails on a clash), so
    prefix them with the plugin name.
 3. Keep `@xeokit/xeokit-sdk` as a **peer** dependency, never a regular one, so the plugin uses the same SDK

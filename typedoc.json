@@ -1,5 +1,5 @@
 {
-  "entryPoints": ["registry.ts"],
+  "entryPoints": ["index.ts"],
   "out": "docs",
   "includeVersion": true,
   "compilerOptions": {

@@ -58,7 +58,7 @@ const root = readJson("package.json");
 root.dependencies = {...root.dependencies, [pkgName]: "*"};
 root.bundleDependencies = [...root.bundleDependencies, pkgName].sort();
 writeJson("package.json", root);
-appendFileSync("registry.ts", `export * from "${pkgName}";\n`);
+appendFileSync("index.ts", `export * from "${pkgName}";\n`);
 
 execSync("npm install --no-audit --no-fund", {stdio: "inherit"});
 console.log(`Created ${dir}; add ${className} to the plugin table in README.md`);

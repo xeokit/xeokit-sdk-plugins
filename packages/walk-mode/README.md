@@ -1,7 +1,5 @@
 # WalkModePlugin
 
-[API reference](https://xeokit.github.io/xeokit-sdk-plugins/classes/WalkModePlugin.html)
-
 [xeokit-sdk](https://github.com/xeokit/xeokit-sdk) plugin for first-person walking through a model: gravity, collisions,
 climbing steps, going through doors and free flight.
 

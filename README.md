@@ -1,7 +1,5 @@
 # xeokit-sdk-plugins
 
-[API reference](https://xeokit.github.io/xeokit-sdk-plugins/modules.html)
-
 Plugins for [xeokit-sdk](https://github.com/xeokit/xeokit-sdk), published together as one npm package installed next
 to the SDK:
 

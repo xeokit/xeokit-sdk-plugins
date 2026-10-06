@@ -26,7 +26,7 @@ writeJson(`${dir}/package.json`, {
     version: "0.1.0",
     description: `xeokit-sdk plugin ${className}`
 });
-writeFileSync(`${dir}/README.md`, `# ${className}\n\n[API reference](https://xeokit.github.io/xeokit-sdk-plugins/classes/${className}.html)\n\n\`\`\`javascript\nimport {${className}} from "@xeokit/sdk-plugins";\n\nconst plugin = new ${className}(viewer);\n\`\`\`\n`);
+writeFileSync(`${dir}/README.md`, `# ${className}\n\n\`\`\`javascript\nimport {${className}} from "@xeokit/sdk-plugins";\n\nconst plugin = new ${className}(viewer);\n\`\`\`\n`);
 writeFileSync(`${dir}/src/index.ts`, `export {${className}, type ${className}Config} from "./${className}.js";\n`);
 writeFileSync(`${dir}/src/${className}.ts`, `import {Plugin, type Viewer} from "@xeokit/xeokit-sdk";
 

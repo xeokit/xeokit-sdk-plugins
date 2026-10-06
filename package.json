@@ -1,6 +1,6 @@
 {
   "name": "@xeokit/sdk-plugins",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Plugins for @xeokit/xeokit-sdk",
   "type": "module",
   "exports": {
